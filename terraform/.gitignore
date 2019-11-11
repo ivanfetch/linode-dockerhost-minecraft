@@ -1,0 +1,4 @@
+# Do not include the .terraform sub-directory, which contains
+# Terraform providers that `terraform init` populates.
+.terraform
+

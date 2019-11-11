@@ -1,0 +1,4 @@
+# Do not include the Direnv .envrc file from any directory of this repository,
+# As it likely contains the Linode API token.
+**/.envrc
+

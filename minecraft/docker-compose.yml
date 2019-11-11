@@ -1,0 +1,36 @@
+# A Docker Compose file that starts two Minecraft containers.
+# For more about how to configure Minecraft in these containers,
+#   see: https://hub.docker.com/r/itzg/minecraft-server/
+#
+# To run this after Docker and Docker Compose is installed:
+#   docker-compose up -d
+
+version: '2'
+
+services:
+  minecraft1:
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+    image: itzg/minecraft-server
+    container_name: mc1
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - /mc1/data:/data
+  
+  minecraft2:
+    ports:
+      - "25566:25565"
+    environment:
+      EULA: "TRUE"
+    image: itzg/minecraft-server
+    container_name: mc2
+    tty: true
+    stdin_open: true
+    restart: always
+    volumes:
+      - /mc2/data:/data
+ 
